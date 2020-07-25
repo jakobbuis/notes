@@ -12,7 +12,7 @@
         </header>
         <main class="p-4">
             <div class="max-w-lg">
-                <Create @create="createNote"></Create>
+                <create @create="createNote"></create>
 
                 <div class="mt-4">
                     <note
@@ -20,8 +20,7 @@
                         :key="note.id"
                         :note="note"
                         @archive="archive"
-                        @unarchive="unarchive"
-                    />
+                        @unarchive="unarchive"></note>
                 </div>
             </div>
         </main>
