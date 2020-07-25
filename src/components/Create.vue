@@ -1,6 +1,6 @@
 <template>
     <form class="flex">
-        <textarea v-model="note" class="flex-1 h-16 p-2"></textarea>
+        <textarea v-model="note" class="flex-1 h-16 p-2 italic"></textarea>
         <button
             @click.prevent="store"
             class="text-white font-bold py-2 px-4 ml-2"
