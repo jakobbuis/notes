@@ -28,7 +28,8 @@ export default {
 
         created_at() {
             const date = new Date(this.note.created_at);
-            return `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+            const minutes = `0${date.getMinutes()}`.slice(-2);
+            return `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${minutes}`;
         },
     },
 
