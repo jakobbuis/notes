@@ -17,7 +17,7 @@ new Vue({
 
     methods: {
         createNote(text) {
-            const note = { version: 1, text };
+            const note = { version: 1, text, created_at: Date.now() };
             this.notes.unshift(note);
             ColdStorage.add(note);
         },
