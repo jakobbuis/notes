@@ -15,6 +15,23 @@ new Vue({
         this.notes = ColdStorage.all();
     },
 
+    computed: {
+        // sort notes by creation descending, archived last
+        sortedNotes() {
+            return this.notes.sort((a, b) => {
+                // Sort archived notes always last
+                if (a.archived && !b.archived) {
+                    return 1;
+                }
+                if (!a.archived && b.archived) {
+                    return -1;
+                }
+                // If both archived or unarchived, sort recent first
+                return Math.sign(b.created_at - a.created_at);
+            });
+        },
+    },
+
     methods: {
         createNote(text) {
             const note = {

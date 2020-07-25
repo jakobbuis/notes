@@ -16,7 +16,7 @@
 
                 <div class="mt-4">
                     <note
-                        v-for="(note) in notes"
+                        v-for="(note) in sortedNotes"
                         :key="note.id"
                         :note="note"
                         @archive="archive"
