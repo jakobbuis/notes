@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Note from './components/Note.vue';
 import Create from './components/Create.vue';
-import NavBar from './components/NavBar.vue';
+import ClearArchived from './components/ClearArchived.vue';
 import ColdStorage from './ColdStorage.js';
 
 new Vue({
     el: '#app',
-    components: { Note, Create, NavBar },
+    components: { Note, Create, ClearArchived },
 
     data: {
         notes: [],
