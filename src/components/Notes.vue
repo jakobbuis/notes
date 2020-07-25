@@ -1,6 +1,6 @@
 <template>
     <div class="mt-4">
-        <note v-for="(note, key) in notes" :key="key" :note="note"></note>
+        <note v-for="(note) in notes" :key="note.id" :note="note"></note>
     </div>
 </template>
 
