@@ -1,0 +1,7 @@
+{
+  "name": "notes",
+  "description": "Brutalist note taking",
+  "devDependencies": {
+    "laravel-mix": "^5.0.4"
+  }
+}
