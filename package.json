@@ -5,5 +5,9 @@
 
     "devDependencies": {
         "laravel-mix": "^5.0.4"
+    },
+
+    "scripts": {
+        "build": "node_modules/.bin/webpack --config=node_modules/laravel-mix/setup/webpack.config.js"
     }
 }
