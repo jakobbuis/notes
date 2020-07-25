@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="app" class="bg-gray-300 min-h-screen">
-        <nav-bar @clear="clearArchived"></nav-bar>
+        <nav-bar @clear="clearArchived" :clear-active="archivedNotesPresent"></nav-bar>
         <main class="p-4">
             <div class="max-w-lg">
                 <create @create="createNote"></create>

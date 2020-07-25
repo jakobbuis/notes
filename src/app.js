@@ -31,6 +31,10 @@ new Vue({
                 return Math.sign(b.created_at - a.created_at);
             });
         },
+
+        archivedNotesPresent() {
+            return this.notes.some(note => note.archived);
+        },
     },
 
     methods: {
