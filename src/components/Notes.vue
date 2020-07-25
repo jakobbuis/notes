@@ -1,7 +1,7 @@
 <template>
-    <ul>
+    <div class="mt-4">
         <note v-for="(note, key) in notes" :key="key" :note="note"></note>
-    </ul>
+    </div>
 </template>
 
 <script>
