@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import Notes from './components/Notes.vue';
+import Note from './components/Note.vue';
 import Create from './components/Create.vue';
 import ColdStorage from './ColdStorage.js';
 
 new Vue({
     el: '#app',
-    components: { Notes, Create },
+    components: { Note, Create },
 
     data: {
         notes: [],

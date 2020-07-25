@@ -13,7 +13,10 @@
         <main class="p-4 bg-gray-300">
             <div class="max-w-lg">
                 <Create @create="createNote"></Create>
-                <Notes :notes="notes"></Notes>
+
+                <div class="mt-4">
+                    <note v-for="(note) in notes" :key="note.id" :note="note"></note>
+                </div>
             </div>
         </main>
     </div>
