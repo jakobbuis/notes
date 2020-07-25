@@ -6,5 +6,6 @@ mix.postCss('src/app.css', 'dist/', [
 ]).sourceMaps();
 
 mix.copy('src/index.html', 'dist/');
+mix.copy('assets/*', 'dist/');
 
 mix.disableSuccessNotifications();
