@@ -7,7 +7,15 @@
 </head>
 <body>
     <div id="app">
-        <Notes>
+        <header class="p-4 bg-gray-700">
+            <h1 class="text-lg font-bold text-white">Notes</h1>
+        </header>
+        <main class="p-4 bg-gray-300">
+            <div class="max-w-lg">
+                <Create @create="createNote"></Create>
+                <Notes :notes="notes"></Notes>
+            </div>
+        </main>
     </div>
 
     <script type="text/javascript" src="/app.js"></script>
