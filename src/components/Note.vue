@@ -1,5 +1,6 @@
 <template>
-    <div class="w-100 overflow-hidden shadow-md bg-white mb-4">
+    <div class="w-100 overflow-hidden shadow-md mb-4"
+        :class="note.archived ? 'bg-gray-500' : 'bg-white'">
         <div class="px-4 py-2">
             <p class="text-gray-700 text-base italic" v-html="renderedText" />
         </div>
