@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Notes from './components/Notes.vue';
 import Create from './components/Create.vue';
+import ColdStorage from './ColdStorage.js';
 
 new Vue({
     el: '#app',
@@ -10,9 +11,15 @@ new Vue({
         notes: [],
     },
 
+    mounted() {
+        this.notes = ColdStorage.all();
+    },
+
     methods: {
         createNote(text) {
-            this.notes.push(text);
+            const note = { version: 1, text };
+            this.notes.unshift(note);
+            ColdStorage.add(note);
         },
     },
 });
