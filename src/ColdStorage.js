@@ -22,6 +22,12 @@ export default {
         this._persist(items);
     },
 
+    remove(id) {
+        const items = this.all();
+        items.splice(items.findIndex(note => note.id === id), 1);
+        this._persist(items);
+    },
+
     // utility method to persist the items to actual storage
     _persist(items) {
         window.localStorage.setItem('notes', JSON.stringify(items));

@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import Note from './components/Note.vue';
 import Create from './components/Create.vue';
+import NavBar from './components/NavBar.vue';
 import ColdStorage from './ColdStorage.js';
 
 new Vue({
     el: '#app',
-    components: { Note, Create },
+    components: { Note, Create, NavBar },
 
     data: {
         notes: [],
@@ -55,6 +56,13 @@ new Vue({
             const note = this.notes.find(note => note.id === id);
             note.archived = false;
             ColdStorage.update(id, note);
+        },
+
+        clearArchived() {
+            // find archived notes, and purge them from ColdStorage
+            this.notes.filter(note => note.archived).map(note => ColdStorage.remove(note.id));
+            // remove archived notes from the UI
+            this.notes = this.notes.filter(note => !note.archived);
         },
 
         uuidv4() {
