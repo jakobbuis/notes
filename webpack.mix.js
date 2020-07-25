@@ -6,3 +6,5 @@ mix.js('src/app.js', 'dist/');
 ]);
 
 mix.copy('src/index.html', 'dist/');
+
+mix.disableSuccessNotifications();
