@@ -15,7 +15,13 @@
                 <Create @create="createNote"></Create>
 
                 <div class="mt-4">
-                    <note v-for="(note) in notes" :key="note.id" :note="note"></note>
+                    <note
+                        v-for="(note) in notes"
+                        :key="note.id"
+                        :note="note"
+                        @archive="archive"
+                        @unarchive="unarchive"
+                    />
                 </div>
             </div>
         </main>
