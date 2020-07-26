@@ -1,5 +1,6 @@
 <template>
     <form class="flex">
+        <Record @voice="(text) => this.note += text"></Record>
         <textarea v-model="note" class="flex-1 h-16 p-2 italic"></textarea>
         <button
             @click.prevent="store"
@@ -12,18 +13,22 @@
 </template>
 
 <script>
+import Record from './Record.vue';
+
 export default {
+    components: { Record },
+
     data() {
         return {
-            note: null,
+            note: '',
         };
     },
 
     methods: {
         store() {
             this.$emit('create', this.note);
-            this.note = null;
-        }
+            this.note = '';
+        },
     },
 };
 </script>
