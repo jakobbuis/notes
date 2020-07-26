@@ -1,5 +1,5 @@
 <template>
-    <form class="flex">
+    <form class="flex sticky bottom-0 pt-4 bg-gray-300">
         <Record @voice="(text) => this.note += text"></Record>
         <textarea v-model="note" class="flex-1 h-16 p-2 italic"></textarea>
         <button
