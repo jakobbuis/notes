@@ -6,7 +6,7 @@
             <button
                 @click.prevent="store"
                 class="text-white font-bold py-2 px-4 ml-2"
-                :class="{ 'bg-gray-700': note, 'bg-gray-500': !note}"
+                :class="{ 'bg-gray-500': note, 'bg-gray-300': !note}"
                 :disabled="!note">
                 Store
             </button>

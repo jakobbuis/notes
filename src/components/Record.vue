@@ -30,12 +30,12 @@ export default {
     computed: {
         recordingStateColour() {
             if (this.recording) {
-                return 'bg-red-600';
+                return 'bg-red-500';
             }
             if (this.recordingEnabled) {
-                return 'bg-gray-700';
+                return 'bg-gray-500';
             }
-            return 'bg-gray-500';
+            return 'bg-gray-300';
         },
     },
 
