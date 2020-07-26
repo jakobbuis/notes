@@ -15,7 +15,7 @@
 <body>
     <div id="app" class="bg-gray-300 min-h-screen">
 
-        <header class="p-4 bg-gray-700">
+        <header class="p-4 bg-gray-700 fixed top-0 inset-x-0">
             <div class="flex justify-between max-w-lg">
                 <h1 class="text-lg font-bold text-white ml-2">Notes</h1>
                 <clear-archived @clear="clearArchived" :active="archivedNotesPresent"></clear-archived>
@@ -23,7 +23,7 @@
         </header>
 
         <main class="p-4">
-            <div class="max-w-lg">
+            <div class="max-w-lg mt-16 mb-24">
                 <note
                     v-for="(note) in sortedNotes"
                     :key="note.id"
@@ -34,10 +34,10 @@
                 <p v-if="notes.length == 0" class="text-gray-700 ml-2">
                     You have no notes.
                 </p>
-
-                <create @create="createNote"></create>
             </div>
         </main>
+
+        <create @create="createNote"></create>
     </div>
 
     <script type="text/javascript" src="/app.js"></script>
