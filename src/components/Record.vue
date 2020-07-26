@@ -38,14 +38,23 @@ export default {
 
     methods: {
         setupVoiceRecognition() {
-            // trigger browser permissions immediately
-            // otherwise the user must hold the button and allow permissions at the same time
-            navigator.mediaDevices.getUserMedia({audio: true}).then((event) => {
-                this.recordingEnabled = true;
-                this.recognition = new webkitSpeechRecognition();
-                this.recognition.lang = 'nl-NL';
-                this.recognition.onresult = this.parseResult;
-            }).catch(() => {});
+                // Initialize the SpeechRecognition engine
+                try {
+                    this.recognition = new webkitSpeechRecognition();
+                    this.recognition.lang = 'nl-NL';
+                    this.recognition.onresult = this.parseResult;
+                } catch (exception) {
+                    this.recordingEnabled = false;
+                    return;
+                }
+
+                // trigger browser permissions immediately
+                // otherwise the user must hold the button and allow permissions at the same time
+                navigator.mediaDevices.getUserMedia({audio: true}).then((event) => {
+                    this.recordingEnabled = true;
+                }).catch(() => {
+                    this.recordingEnabled = false;
+                });
         },
 
         parseResult(event) {
