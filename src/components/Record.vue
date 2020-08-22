@@ -53,8 +53,10 @@ export default {
 
                 // trigger browser permissions immediately
                 // otherwise the user must hold the button and allow permissions at the same time
-                navigator.mediaDevices.getUserMedia({audio: true}).then((event) => {
+                navigator.mediaDevices.getUserMedia({audio: true}).then((stream) => {
                     this.recordingEnabled = true;
+                    // stop all tracks to stop recording until we actually use it
+                    stream.getTracks().forEach((track) => track.stop());
                 }).catch(() => {
                     this.recordingEnabled = false;
                 });
